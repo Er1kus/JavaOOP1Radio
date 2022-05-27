@@ -23,27 +23,21 @@ public class RadioService {
     }
 
     public int nextWave() {
-        if (currentWave < 9 && currentWave >= 0) {
+        if (currentWave < 9) {
             currentWave = currentWave + 1;
             return currentWave;
+        } else {
+            return 0;
         }
-        if (currentWave >= 9) {
-            currentWave = 0;
-            return currentWave;
-        }
-        return 0;
     }
 
     public int pervWave() {
-        if (currentWave <= 9 && currentWave >= 1) {
+        if (currentWave >= 1) {
             currentWave = currentWave - 1;
             return currentWave;
+        } else {
+            return 9;
         }
-        if (currentWave == 0) {
-            currentWave = 9;
-            return currentWave;
-        }
-        return 0;
     }
 
     public void setCurrentVolume(int currentVolume) {
@@ -64,23 +58,17 @@ public class RadioService {
         if (currentVolume < 10) {
             currentVolume = currentVolume + 1;
             return currentVolume;
+        } else {
+            return 10;
         }
-        if (currentVolume == 10) {
-            currentVolume = 10;
-            return currentVolume;
-        }
-        return 0;
     }
 
     public int decreaseVolume() {
-        if (currentVolume <= 10 && currentVolume >= 1) {
+        if (currentVolume >= 1) {
             currentVolume = currentVolume - 1;
             return currentVolume;
+        } else {
+            return 0;
         }
-        if (currentVolume == 0) {
-            currentVolume = 0;
-            return currentVolume;
-        }
-        return 0;
     }
 }
