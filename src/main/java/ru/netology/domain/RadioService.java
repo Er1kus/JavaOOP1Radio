@@ -8,14 +8,14 @@ public class RadioService {
 //    int[] waves = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 //    int[] volumeLevels = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    public void setCurrentWave(int CurrentWave) {
-        if (CurrentWave < 0) {
+    public void setCurrentWave(int сurrentWave) {
+        if (сurrentWave < 0) {
             return;
         }
-        if (CurrentWave > 9) {
+        if (сurrentWave > 9) {
             return;
         }
-        this.currentWave = CurrentWave;
+        this.currentWave = сurrentWave;
     }
 
     public int getCurrentWave() {
