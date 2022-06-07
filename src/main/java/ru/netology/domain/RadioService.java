@@ -2,20 +2,49 @@ package ru.netology.domain;
 
 public class RadioService {
 
-
     private int currentWave;
     private int currentVolume;
-//    int[] waves = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-//    int[] volumeLevels = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    private int amountWave = 10;
+    private int maxWave = amountWave - 1;
+    private int minWave = 0;
+    private int maxVolume = 100;
+    private int minVolume = 0;
 
-    public void setCurrentWave(int сurrentWave) {
-        if (сurrentWave < 0) {
-            return;
+
+    public int getMaxWave() {
+        return maxWave;
+    }
+
+    public int getMinWave() {
+        return minWave;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
+
+    public RadioService() {
+    }
+
+    public RadioService(int amountWave) {
+        this.amountWave = amountWave;
+        this.maxWave = amountWave - 1;
+    }
+
+    public int setCurrentWave(int currentWave) {
+        if (currentWave < minWave) {
+            return currentWave;
         }
-        if (сurrentWave > 9) {
-            return;
+        if (currentWave > maxWave) {
+            return this.currentWave = maxWave;
         }
-        this.currentWave = сurrentWave;
+        this.currentWave = currentWave;
+        return currentWave;
     }
 
     public int getCurrentWave() {
@@ -23,7 +52,7 @@ public class RadioService {
     }
 
     public int nextWave() {
-        if (currentWave < 9) {
+        if (currentWave < amountWave - 1) {
             currentWave = currentWave + 1;
             return currentWave;
         } else {
@@ -36,18 +65,19 @@ public class RadioService {
             currentWave = currentWave - 1;
             return currentWave;
         } else {
-            return 9;
+            return currentWave = maxWave;
         }
     }
 
-    public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < 0) {
-            return;
+    public int setCurrentVolume(int currentVolume) {
+        if (currentVolume < minVolume) {
+            return currentVolume;
         }
-        if (currentVolume > 10) {
-            return;
+        if (currentVolume > maxVolume) {
+            return this.currentVolume = maxVolume;
         }
         this.currentVolume = currentVolume;
+        return currentVolume;
     }
 
     public int getCurrentVolume() {
@@ -55,11 +85,11 @@ public class RadioService {
     }
 
     public int increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
             return currentVolume;
         } else {
-            return 10;
+            return maxVolume;
         }
     }
 
