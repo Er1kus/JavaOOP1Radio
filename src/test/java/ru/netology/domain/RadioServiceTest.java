@@ -1,5 +1,6 @@
 package ru.netology.domain;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -8,11 +9,13 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioServiceTest {
+
     @Test
     public void test() {
         RadioService service = new RadioService(100);
 
     }
+
     @Test
     public void test2() {
         RadioService service = new RadioService(50);
@@ -23,6 +26,7 @@ public class RadioServiceTest {
         assertEquals(expected, actual);
 
     }
+
     @Test
     public void test3() {
         RadioService service = new RadioService();

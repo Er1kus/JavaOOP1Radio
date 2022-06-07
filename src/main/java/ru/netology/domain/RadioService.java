@@ -1,5 +1,12 @@
 package ru.netology.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class RadioService {
 
     private int currentWave;
@@ -11,25 +18,25 @@ public class RadioService {
     private int minVolume = 0;
 
 
-    public int getMaxWave() {
-        return maxWave;
-    }
-
-    public int getMinWave() {
-        return minWave;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-
-    public RadioService() {
-    }
+//    public int getMaxWave() {
+//        return maxWave;
+//    }
+//
+//    public int getMinWave() {
+//        return minWave;
+//    }
+//
+//    public int getMaxVolume() {
+//        return maxVolume;
+//    }
+//
+//    public int getMinVolume() {
+//        return minVolume;
+//    }
+//
+//
+//    public RadioService() {
+//    }
 
     public RadioService(int amountWave) {
         this.amountWave = amountWave;
@@ -47,10 +54,11 @@ public class RadioService {
         return currentWave;
     }
 
-    public int getCurrentWave() {
-        return currentWave;
-    }
-
+    //
+//    public int getCurrentWave() {
+//        return currentWave;
+//    }
+//
     public int nextWave() {
         if (currentWave < amountWave - 1) {
             currentWave = currentWave + 1;
@@ -80,10 +88,11 @@ public class RadioService {
         return currentVolume;
     }
 
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
+    //
+//    public int getCurrentVolume() {
+//        return currentVolume;
+//    }
+//
     public int increaseVolume() {
         if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
